@@ -4,9 +4,11 @@ import SEO from '@/components/SEO';
 import Button from '@/components/Button';
 import { generatePageSEO } from '@/lib/seo';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
   const seoData = generatePageSEO('contact');
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,10 +52,10 @@ export default function Contact() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Get Your Free Automation Audit
+              {t('contact.hero.title')}
             </h1>
             <p className="text-xl text-neutral-300 leading-relaxed">
-              Let's discuss how AI automation can transform your business. Book a free consultation today.
+              {t('contact.hero.description')}
             </p>
           </div>
         </div>
@@ -65,13 +67,13 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-bold mb-6 text-primary dark:text-white">
-                Send Us a Message
+                {t('contact.form.title')}
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-neutral-700 dark:text-neutral-300">
-                    Name *
+                    {t('contact.form.name')} *
                   </label>
                   <input
                     type="text"
@@ -86,7 +88,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2 text-neutral-700 dark:text-neutral-300">
-                    Email *
+                    {t('contact.form.email')} *
                   </label>
                   <input
                     type="email"
@@ -101,7 +103,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium mb-2 text-neutral-700 dark:text-neutral-300">
-                    Phone
+                    {t('contact.form.phone')}
                   </label>
                   <input
                     type="tel"
@@ -115,7 +117,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium mb-2 text-neutral-700 dark:text-neutral-300">
-                    Company
+                    {t('contact.form.company')}
                   </label>
                   <input
                     type="text"
@@ -129,7 +131,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2 text-neutral-700 dark:text-neutral-300">
-                    Message *
+                    {t('contact.form.message')} *
                   </label>
                   <textarea
                     id="message"
@@ -155,7 +157,7 @@ export default function Contact() {
                 )}
 
                 <Button type="submit" variant="primary" size="lg" disabled={status === 'loading'}>
-                  {status === 'loading' ? 'Sending...' : 'Send Message'}
+                  {status === 'loading' ? 'Sending...' : t('contact.form.send')}
                 </Button>
               </form>
             </div>
@@ -163,14 +165,14 @@ export default function Contact() {
             {/* Contact Info */}
             <div>
               <h2 className="text-3xl font-bold mb-6 text-primary dark:text-white">
-                Contact Information
+                {t('contact.info.title')}
               </h2>
               
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
                   <FiMail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div className="ml-4">
-                    <h3 className="font-semibold text-primary dark:text-white mb-1">Email</h3>
+                    <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.email')}</h3>
                     <a href="mailto:contact@kodai.com" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
                       contact@kodai.com
                     </a>
@@ -180,7 +182,7 @@ export default function Contact() {
                 <div className="flex items-start">
                   <FiPhone className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div className="ml-4">
-                    <h3 className="font-semibold text-primary dark:text-white mb-1">Phone</h3>
+                    <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.phone')}</h3>
                     <a href="tel:+1234567890" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
                       +1 (234) 567-890
                     </a>
@@ -190,7 +192,7 @@ export default function Contact() {
                 <div className="flex items-start">
                   <FiMapPin className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div className="ml-4">
-                    <h3 className="font-semibold text-primary dark:text-white mb-1">Location</h3>
+                    <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.location')}</h3>
                     <p className="text-neutral-600 dark:text-neutral-300">
                       123 AI Street<br />
                       Tech City, TC 12345
@@ -201,12 +203,12 @@ export default function Contact() {
 
               <div className="bg-neutral-100 dark:bg-primary-light p-6 rounded-xl">
                 <h3 className="font-bold text-lg mb-3 text-primary dark:text-white">
-                  Business Hours
+                  {t('contact.info.hours')}
                 </h3>
                 <div className="space-y-2 text-neutral-600 dark:text-neutral-300">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>{t('contact.info.monday')}</p>
+                  <p>{t('contact.info.saturday')}</p>
+                  <p>{t('contact.info.sunday')}</p>
                 </div>
               </div>
             </div>

@@ -5,40 +5,47 @@ import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import Button from '@/components/Button';
-import { FiZap, FiTrendingUp, FiUsers, FiCpu } from 'react-icons/fi';
+import { FiCalendar, FiUsers, FiPhone } from 'react-icons/fi';
 import { generatePageSEO } from '@/lib/seo';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
   const seoData = generatePageSEO('home');
+  const { t } = useLanguage();
 
   const services = [
     {
-      title: 'AI Workflow Automation',
-      description: 'Streamline repetitive tasks and optimize business processes with intelligent automation solutions.',
-      icon: FiZap,
+      title: t('home.services.appointment.title'),
+      description: t('home.services.appointment.description'),
+      icon: FiCalendar,
       href: '/services',
-      features: ['Process optimization', 'Task automation', 'Integration setup'],
+      features: [
+        t('home.services.appointment.features.0'),
+        t('home.services.appointment.features.1'),
+        t('home.services.appointment.features.2')
+      ],
     },
     {
-      title: 'Data Processing & Analysis',
-      description: 'Transform raw data into actionable insights with AI-powered analytics and visualization.',
-      icon: FiTrendingUp,
-      href: '/services',
-      features: ['Data analysis', 'Predictive modeling', 'Real-time reporting'],
-    },
-    {
-      title: 'Customer Service Automation',
-      description: 'Enhance customer experience with AI chatbots and automated support systems.',
+      title: t('home.services.lead.title'),
+      description: t('home.services.lead.description'),
       icon: FiUsers,
       href: '/services',
-      features: ['Chatbot development', '24/7 support', 'Multi-channel integration'],
+      features: [
+        t('home.services.lead.features.0'),
+        t('home.services.lead.features.1'),
+        t('home.services.lead.features.2')
+      ],
     },
     {
-      title: 'Custom AI Solutions',
-      description: 'Tailored AI applications designed specifically for your unique business needs.',
-      icon: FiCpu,
+      title: t('home.services.voice.title'),
+      description: t('home.services.voice.description'),
+      icon: FiPhone,
       href: '/services',
-      features: ['Custom development', 'API integration', 'Scalable architecture'],
+      features: [
+        t('home.services.voice.features.0'),
+        t('home.services.voice.features.1'),
+        t('home.services.voice.features.2')
+      ],
     },
   ];
 
@@ -76,11 +83,11 @@ export default function Home() {
       
       {/* Hero Section */}
       <Hero
-        subtitle="AI Automation Agency"
-        title="Transform Your Business with Intelligent Automation"
-        description="Reduce manual work by up to 85%, cut operational costs, and scale efficiently with custom AI solutions tailored to your business needs."
-        primaryCTA={{ text: 'Book Free Consultation', href: '/contact' }}
-        secondaryCTA={{ text: 'View Case Studies', href: '/portfolio' }}
+        subtitle={t('home.hero.subtitle')}
+        title={t('home.hero.title')}
+        description={t('home.hero.description')}
+        primaryCTA={{ text: t('home.hero.primaryCTA'), href: '/contact' }}
+        secondaryCTA={{ text: t('home.hero.secondaryCTA'), href: '/portfolio' }}
       />
 
       {/* Services Section */}
@@ -88,14 +95,14 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-white">
-              Our Services
+              {t('home.services.title')}
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Comprehensive AI automation solutions designed to streamline your operations and drive measurable results.
+              {t('home.services.description')}
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
@@ -103,7 +110,7 @@ export default function Home() {
           
           <div className="text-center mt-12">
             <Button href="/services" variant="primary" size="lg">
-              Explore All Services
+              {t('home.services.cta')}
             </Button>
           </div>
         </div>
@@ -114,10 +121,10 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-white">
-              Success Stories
+              {t('home.caseStudies.title')}
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Real results from businesses that transformed their operations with AI automation.
+              {t('home.caseStudies.description')}
             </p>
           </div>
           
@@ -129,7 +136,7 @@ export default function Home() {
           
           <div className="text-center mt-12">
             <Button href="/portfolio" variant="outline" size="lg">
-              View All Case Studies
+              {t('home.caseStudies.cta')}
             </Button>
           </div>
         </div>
@@ -140,17 +147,17 @@ export default function Home() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Ready to Transform Your Business?
+              {t('home.cta.title')}
             </h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Get a free automation audit and discover how AI can save you time and money.
+              {t('home.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" variant="primary" size="lg">
-                Book Free Consultation
+                {t('home.cta.primary')}
               </Button>
               <Button href="/services" variant="outline" size="lg">
-                Explore Services
+                {t('home.cta.secondary')}
               </Button>
             </div>
           </div>

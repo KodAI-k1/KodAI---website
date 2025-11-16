@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FiMenu, FiX } from 'react-icons/fi';
-import DarkModeToggle from './DarkModeToggle';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +21,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/portfolio', label: 'Portfolio' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: t('nav.home') },
+    { href: '/about', label: t('nav.about') },
+    { href: '/services', label: t('nav.services') },
+    { href: '/portfolio', label: t('nav.portfolio') },
+    { href: '/contact', label: t('nav.contact') },
   ];
 
   const isActive = (path: string) => router.pathname === path;
@@ -61,15 +63,15 @@ const Navbar: React.FC = () => {
                 {link.label}
               </Link>
             ))}
-            <DarkModeToggle />
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <DarkModeToggle />
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary dark:text-white p-2"
+              className="text-primary p-2"
               aria-label="Toggle menu"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}

@@ -1,4 +1,5 @@
-import fs from 'fs';
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';

@@ -1,8 +1,11 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Terms() {
+  const { t } = useLanguage();
+  
   return (
     <Layout>
       <SEO
@@ -14,10 +17,10 @@ export default function Terms() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Terms of Service
+              {t('terms.title')}
             </h1>
             <p className="text-xl text-neutral-300">
-              Last updated: January 2024
+              {t('terms.lastUpdated')}
             </p>
           </div>
         </div>
@@ -28,38 +31,37 @@ export default function Terms() {
           <div className="max-w-4xl mx-auto prose dark:prose-invert">
             <div className="text-neutral-700 dark:text-neutral-300 space-y-6">
               <p>
-                Welcome to KodAI. By accessing our website and using our services, you agree to be bound by these Terms of Service.
+                {t('terms.intro')}
               </p>
 
-              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">Use of Services</h2>
+              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">{t('terms.useOfServices.title')}</h2>
               <p>
-                You agree to use our services only for lawful purposes and in accordance with these Terms. You agree not to:
+                {t('terms.useOfServices.description')}
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Use our services in any way that violates applicable laws</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Interfere with or disrupt our services</li>
-                <li>Use our services for any harmful or malicious purposes</li>
+                {['0', '1', '2', '3'].map((index) => (
+                  <li key={index}>{t(`terms.useOfServices.items.${index}`)}</li>
+                ))}
               </ul>
 
-              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">Intellectual Property</h2>
+              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">{t('terms.intellectualProperty.title')}</h2>
               <p>
-                All content, trademarks, and data on this website, including but not limited to software, databases, text, graphics, icons, and hyperlinks, are the property of or licensed to KodAI and are protected by law.
+                {t('terms.intellectualProperty.description')}
               </p>
 
-              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">Limitation of Liability</h2>
+              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">{t('terms.liability.title')}</h2>
               <p>
-                KodAI shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
+                {t('terms.liability.description')}
               </p>
 
-              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">Changes to Terms</h2>
+              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">{t('terms.changes.title')}</h2>
               <p>
-                We reserve the right to modify these terms at any time. We will notify users of any material changes by posting the new Terms of Service on this page.
+                {t('terms.changes.description')}
               </p>
 
-              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-primary dark:text-white mt-8 mb-4">{t('terms.contact.title')}</h2>
               <p>
-                If you have questions about these Terms, please contact us at legal@kodai.com
+                {t('terms.contact.description')}
               </p>
             </div>
           </div>

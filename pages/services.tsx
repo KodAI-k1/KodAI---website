@@ -4,76 +4,48 @@ import SEO from '@/components/SEO';
 import ServiceCard from '@/components/ServiceCard';
 import Button from '@/components/Button';
 import { generatePageSEO } from '@/lib/seo';
-import { FiZap, FiTrendingUp, FiUsers, FiCpu, FiDatabase, FiSettings } from 'react-icons/fi';
+import { FiCalendar, FiUsers, FiPhone } from 'react-icons/fi';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Services() {
   const seoData = generatePageSEO('services');
+  const { t } = useLanguage();
 
   const services = [
     {
-      title: 'AI Workflow Automation',
-      description: 'Streamline repetitive tasks and optimize business processes with intelligent automation solutions that save time and reduce errors.',
-      icon: FiZap,
+      title: t('services.appointment.title'),
+      description: t('services.appointment.description'),
+      icon: FiCalendar,
       features: [
-        'Process optimization and mapping',
-        'Task automation and scheduling',
-        'System integration and API connections',
-        'Custom workflow development'
+        t('services.appointment.features.0'),
+        t('services.appointment.features.1'),
+        t('services.appointment.features.2'),
+        t('services.appointment.features.3'),
+        t('services.appointment.features.4')
       ],
     },
     {
-      title: 'Data Processing & Analysis',
-      description: 'Transform raw data into actionable insights with AI-powered analytics, visualization, and predictive modeling.',
-      icon: FiTrendingUp,
-      features: [
-        'Data collection and cleaning',
-        'Predictive modeling and forecasting',
-        'Real-time reporting dashboards',
-        'Business intelligence solutions'
-      ],
-    },
-    {
-      title: 'Customer Service Automation',
-      description: 'Enhance customer experience with AI chatbots, automated support systems, and intelligent routing.',
+      title: t('services.lead.title'),
+      description: t('services.lead.description'),
       icon: FiUsers,
       features: [
-        'AI chatbot development',
-        '24/7 automated support',
-        'Multi-channel integration',
-        'Natural language processing'
+        t('services.lead.features.0'),
+        t('services.lead.features.1'),
+        t('services.lead.features.2'),
+        t('services.lead.features.3'),
+        t('services.lead.features.4')
       ],
     },
     {
-      title: 'Custom AI Solutions',
-      description: 'Tailored AI applications designed specifically for your unique business needs and industry requirements.',
-      icon: FiCpu,
+      title: t('services.voice.title'),
+      description: t('services.voice.description'),
+      icon: FiPhone,
       features: [
-        'Custom model development',
-        'API integration services',
-        'Scalable architecture design',
-        'Ongoing maintenance and support'
-      ],
-    },
-    {
-      title: 'Document Processing',
-      description: 'Automate document handling with intelligent OCR, data extraction, and classification systems.',
-      icon: FiDatabase,
-      features: [
-        'Invoice and receipt processing',
-        'Contract analysis and extraction',
-        'Form digitization',
-        'Compliance and validation'
-      ],
-    },
-    {
-      title: 'Process Optimization',
-      description: 'Identify bottlenecks and inefficiencies in your operations and implement AI-driven improvements.',
-      icon: FiSettings,
-      features: [
-        'Workflow analysis and mapping',
-        'Efficiency improvement plans',
-        'Change management support',
-        'Performance monitoring'
+        t('services.voice.features.0'),
+        t('services.voice.features.1'),
+        t('services.voice.features.2'),
+        t('services.voice.features.3'),
+        t('services.voice.features.4')
       ],
     },
   ];
@@ -87,10 +59,10 @@ export default function Services() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              AI Automation Services
+              {t('services.hero.title')}
             </h1>
             <p className="text-xl text-neutral-300 leading-relaxed">
-              Comprehensive solutions to transform your business operations, reduce costs, and scale efficiently.
+              {t('services.hero.description')}
             </p>
           </div>
         </div>
@@ -112,43 +84,43 @@ export default function Services() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary dark:text-white">
-              Our Process
+              {t('services.process.title')}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white dark:bg-primary rounded-xl p-6 border-l-4 border-accent">
                 <h3 className="text-xl font-bold text-primary dark:text-white mb-2">
-                  Free Consultation
+                  {t('services.process.consultation.title')}
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  We start with a free discovery call to understand your challenges and identify automation opportunities.
+                  {t('services.process.consultation.description')}
                 </p>
               </div>
               
               <div className="bg-white dark:bg-primary rounded-xl p-6 border-l-4 border-accent">
                 <h3 className="text-xl font-bold text-primary dark:text-white mb-2">
-                  Custom Proposal
+                  {t('services.process.proposal.title')}
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Receive a detailed proposal with ROI projections, timeline, and clear deliverables.
+                  {t('services.process.proposal.description')}
                 </p>
               </div>
               
               <div className="bg-white dark:bg-primary rounded-xl p-6 border-l-4 border-accent">
                 <h3 className="text-xl font-bold text-primary dark:text-white mb-2">
-                  Development & Testing
+                  {t('services.process.development.title')}
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  We build your solution with regular check-ins and thorough testing before deployment.
+                  {t('services.process.development.description')}
                 </p>
               </div>
               
               <div className="bg-white dark:bg-primary rounded-xl p-6 border-l-4 border-accent">
                 <h3 className="text-xl font-bold text-primary dark:text-white mb-2">
-                  Launch & Support
+                  {t('services.process.launch.title')}
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Seamless deployment with training and ongoing support to ensure long-term success.
+                  {t('services.process.launch.description')}
                 </p>
               </div>
             </div>
@@ -161,13 +133,13 @@ export default function Services() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Ready to Get Started?
+              {t('services.cta.title')}
             </h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Book a free consultation to discover how AI automation can transform your business.
+              {t('services.cta.description')}
             </p>
             <Button href="/contact" variant="primary" size="lg">
-              Schedule Free Consultation
+              {t('services.cta.button')}
             </Button>
           </div>
         </div>
