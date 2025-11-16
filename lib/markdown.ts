@@ -1,5 +1,4 @@
-git config --global user.name "Your Name"
-git config --global user.email "your-email@example.com"import fs from 'fs';
+import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';
@@ -46,11 +45,12 @@ export function getAllCaseStudies(): CaseStudy[] {
           metrics: data.metrics || [],
           tags: data.tags || [],
           content: md.render(content),
-        } as CaseStudy;
+        };
       });
 
     return allCaseStudies;
-  } catch {
+  } catch (error) {
+    console.error('Error reading case studies:', error);
     return [];
   }
 }
@@ -70,8 +70,9 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
       metrics: data.metrics || [],
       tags: data.tags || [],
       content: md.render(content),
-    } as CaseStudy;
-  } catch {
+    };
+  } catch (error) {
+    console.error(`Error reading case study ${slug}:`, error);
     return null;
   }
 }

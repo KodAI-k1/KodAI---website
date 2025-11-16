@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CaseStudyCardProps {
   title: string;
@@ -34,10 +35,11 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         <div className="h-full bg-white dark:bg-primary-light rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover:border-accent dark:hover:border-accent">
           {/* Image */}
           <div className="relative h-48 overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-            <img 
+            <Image 
               src={image} 
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           
