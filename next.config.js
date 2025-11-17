@@ -11,6 +11,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: 'https',
+        hostname: "i0.wp.com",
+      },
+      {
+        protocol: 'https',
+        hostname: "storage.googleapis.com",
+      },
     ],
     formats: ['image/avif', 'image/webp'],
   },
