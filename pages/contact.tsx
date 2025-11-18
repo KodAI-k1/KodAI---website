@@ -173,29 +173,20 @@ export default function Contact() {
                   <FiMail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.email')}</h3>
-                    <a href="mailto:contact@kodai.com" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
-                      contact@kodai.com
+                    <a href="mailto:info@kodai.si" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
+                      info@kodai.si
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <FiPhone className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.phone')}</h3>
-                    <a href="tel:+1234567890" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
-                      +1 (234) 567-890
-                    </a>
-                  </div>
-                </div>
+
 
                 <div className="flex items-start">
                   <FiMapPin className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.location')}</h3>
                     <p className="text-neutral-600 dark:text-neutral-300">
-                      123 AI Street<br />
-                      Tech City, TC 12345
+                      9000 Murska Sobota, Slovenija
                     </p>
                   </div>
                 </div>
