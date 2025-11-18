@@ -173,8 +173,8 @@ export default function Contact() {
                   <FiMail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h3 className="font-semibold text-primary dark:text-white mb-1">{t('contact.info.email')}</h3>
-                    <a href="mailto:info@kodai.com" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
-                      info@kodai.com
+                    <a href="mailto:info@kodai.si" className="text-neutral-600 dark:text-neutral-300 hover:text-accent">
+                      info@kodai.si
                     </a>
                   </div>
                 </div>
