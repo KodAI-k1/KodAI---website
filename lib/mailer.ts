@@ -36,7 +36,7 @@ export async function sendContactFormEmail(formData: {
   message: string;
 }): Promise<{ success: boolean; error?: string }> {
   const emailData: EmailData = {
-    to: process.env.MAIL_TO || 'contact@kodai.com',
+    to: process.env.MAIL_TO || 'info@kodai.si',
     from: process.env.MAIL_FROM || 'noreply@kodai.com',
     subject: `New Contact Form Submission from ${formData.name}`,
     text: `

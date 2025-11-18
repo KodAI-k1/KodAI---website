@@ -70,8 +70,7 @@ export const generateOrganizationSchema = () => {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'contact@kodai.com',
-      telephone: '+1-234-567-890',
+      email: 'info@kodai.si',
     },
     sameAs: [
       'https://twitter.com/kodai',

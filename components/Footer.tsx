@@ -103,19 +103,13 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-neutral-300">
                 <FiMail className="mt-1 flex-shrink-0" size={18} />
-                <a href="mailto:contact@kodai.com" className="hover:text-accent transition-colors">
-                  contact@kodai.com
-                </a>
-              </li>
-              <li className="flex items-start space-x-3 text-neutral-300">
-                <FiPhone className="mt-1 flex-shrink-0" size={18} />
-                <a href="tel:+1234567890" className="hover:text-accent transition-colors">
-                  +1 (234) 567-890
+                <a href="mailto:info@kodai.si" className="hover:text-accent transition-colors">
+                  info@kodai.si
                 </a>
               </li>
               <li className="flex items-start space-x-3 text-neutral-300">
                 <FiMapPin className="mt-1 flex-shrink-0" size={18} />
-                <span>123 AI Street, Tech City, TC 12345</span>
+                <span>9000 Murska Sobota, Slovenija</span>
               </li>
             </ul>
           </div>
