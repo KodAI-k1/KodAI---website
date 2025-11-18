@@ -514,3 +514,5 @@ This project is proprietary and confidential. All rights reserved by KodAI.
 ---
 
 **Built with ❤️ for KodAI - Transforming businesses through AI automation**
+#   w e b s i t e 2  
+ 
