@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FiMail, FiPhone, FiMapPin, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {

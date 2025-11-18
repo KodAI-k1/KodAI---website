@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import Button from '@/components/Button';
 import { generatePageSEO } from '@/lib/seo';
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiMapPin } from 'react-icons/fi';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
